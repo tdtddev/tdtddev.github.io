@@ -1,0 +1,25 @@
+<div class="forceSize">
+	<div class='selectionTable'>
+		<table>
+		<tr class='title'>
+			<input class="classCheck" type="checkbox" ng-click="info.create(); info.toggle();" ng-model="info.toggled">Create {{info.titleNum}}</input>
+		</tr>
+	</table>
+	</div>
+	<table class="{{info}}table" ng-click="info.create(); info.toggle();">
+			<tr class='title'>
+				<td>Class</td>
+				<td>Health</td>
+				<td>Mana</td>
+				<td>Attack</td>
+				<td>Defense</td>
+			</tr>
+			<tr>
+				<td>{{info.name}}</td>
+				<td>{{info.health}} | {{info.maxHealth}}</td>
+				<td>{{info.mana}} | {{info.maxMana}}</td>
+				<td>{{info.attack}}</td>
+				<td>{{info.defense}}</td>
+			</tr>
+	</table>
+</div>

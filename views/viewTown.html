@@ -1,0 +1,104 @@
+<div class='bgMode' ng-show="!bgMode">
+	<div class='gameWrap'>
+		
+		<div class='col-md-12'>
+			<div class="container" >
+				<div class='col-md-3'></div>
+				<div class='col-md-6 inventoryTown'><h1>Inventory</h1>
+						<div class='col-md-4'>Weight:{{player.weight}} / {{player.maxWeight}}</div>
+						<div class='col-md-4'>Food:{{player.food}}</div>
+						<div class='col-md-4'>Drinks:{{player.water}}</div>
+				</div>
+				<div class='col-md-3'></div>
+			</div>
+		</div>
+		<div class='col-md-6'>
+			<h1>Town Stores</h1>
+			<button class="btn btn-default" ng-click="newStore()">Visit Store</button>
+		</div>
+		
+		<div class='col-md-6 whBg'>
+			<div class='col-md-12'>
+				<h1>Welcome to {{shop.keep}}'s Store!</h1>
+				<p>You have {{player.gold}} gold to spend!</p>
+				<div class="col-md-6">
+					<div class="container-fluid" ng-mouseenter="available('food', 'disableFood')">
+						<h2>Food</h2>
+						<hr>
+						<h3>{{shop.food.name}} <img ng-show="shop.food.img" ng-src="{{shop.food.img}}"/></h3>
+
+						<button class="btn btn-success" ng-click="buyItem('food'); available('food', 'disableFood')" ng-disabled="disableFood">Buy</button>
+						<p>Price: {{shop.food.cost}}</p>
+						<p>Weight: {{shop.food.weight}}</p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="container-fluid" ng-mouseenter="available('water', 'disableWater')">
+						<h2>Drink</h2>
+						<hr>
+						<h3>{{shop.water.name}} <img ng-show="shop.water.img" ng-src="{{shop.water.img}}"/></h3>
+
+						<button class="btn btn-success" ng-click="buyItem('water'); available('water', 'disableWater')" ng-disabled="disableWater">Buy</button>
+						<p>Price: {{shop.water.cost}}</p>
+						<p>Weight: {{shop.water.weight}}</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class='col-md-12' ng-show="weaponBuy">
+				<h1>Welcome to the Weapon Store!</h1>
+				<div class="col-md-6">
+					<h2>{{weaponShop.weapOne.name}}</h2>
+					<hr>
+					<h3>{{weaponShop.weapOne.slot}}</h3>
+					<div class="col-md-6">
+						<button class="btn btn-success" ng-click="buyWeapon('weapOne')">Buy</button>
+						<p>Price: {{weaponShop.weapOne.price}}</p>
+						<p>Level: {{weaponShop.weapOne.level}}</p>
+						<p>Rarity: {{weaponShop.weapOne.rarity}}</p>
+						<p>Material: {{weaponShop.weapOne.material}}</p>
+					</div>
+					<div class="col-md-6">
+						<p>Gold+: {{weaponShop.weapOne.stats.goldPlus}}</p>
+						<p>Exp+: {{weaponShop.weapOne.stats.expPlus}}</p>
+						<p>HP+: {{weaponShop.weapOne.stats.healthPlus}}</p>
+						<p>MP+: {{weaponShop.weapOne.stats.manaPlus}}</p>
+						<p>ATK+: {{weaponShop.weapOne.stats.attackPlus}}</p>
+						<p>DEF+: {{weaponShop.weapOne.stats.defensePlus}}</p>
+						<p>HPS+: {{weaponShop.weapOne.stats.hRegenPlus}}</p>
+						<p>MPS+: {{weaponShop.weapOne.stats.mRegenPlus}}</p>
+						<p>ArmPen+: {{weaponShop.weapOne.stats.armPenPlus}}</p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="container-fluid">
+						<h2>{{weaponShop.weapTwo.name}}</h2>
+						<hr>
+						<h3>{{weaponShop.weapTwo.slot}}</h3>
+						<div class="col-md-6">
+							<button class="btn btn-success" ng-click="buyWeapon('weapTwo')">Buy</button>
+							<p>Price: {{weaponShop.weapTwo.price}}</p>
+							<p>Level: {{weaponShop.weapTwo.level}}</p>
+							<p>Rarity: {{weaponShop.weapTwo.rarity}}</p>
+							<p>Material: {{weaponShop.weapTwo.material}}</p>
+						</div>
+						<div class="col-md-6">
+							<p>Gold+: {{weaponShop.weapTwo.stats.goldPlus}}</p>
+							<p>Exp+: {{weaponShop.weapTwo.stats.expPlus}}</p>
+							<p>HP+: {{weaponShop.weapTwo.stats.healthPlus}}</p>
+							<p>MP+: {{weaponShop.weapTwo.stats.manaPlus}}</p>
+							<p>ATK+: {{weaponShop.weapTwo.stats.attackPlus}}</p>
+							<p>DEF+: {{weaponShop.weapTwo.stats.defensePlus}}</p>
+							<p>HPS+: {{weaponShop.weapTwo.stats.hRegenPlus}}</p>
+							<p>MPS+: {{weaponShop.weapTwo.stats.mRegenPlus}}</p>
+							<p>ArmPen+: {{weaponShop.weapTwo.stats.armPenPlus}}</p>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		
+	</div>
+</div>

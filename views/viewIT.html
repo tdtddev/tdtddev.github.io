@@ -1,0 +1,34 @@
+<button ng-click="newItem()">New Item</button>
+<input ng-model="level" type="number"></input>
+<table>
+	<tr ng-style="{'background-color': testItem.color}">
+		<td>Name</td>
+		<td>{{testItem.name}}</td>
+	</tr>
+	<tr ng-style="{'background-color': testItem.color}">
+		<td>Slot</td>
+		<td>{{testItem.slot}}</td>
+	</tr>
+	<tr ng-style="{'background-color': testItem.color}">
+		<td>Level</td>
+		<td>{{testItem.level}}</td>
+	</tr>
+	<tr ng-style="{'background-color': testItem.color}">
+		<td>Rarity</td>
+		<td>{{testItem.rarity}}</td>
+	</tr>
+	<tr ng-style="{'background-color': testItem.color}">
+		<td>Material</td>
+		<td>{{testItem.material}}</td>
+	</tr>
+</table>
+<table>
+	<tr ng-repeat="(key, val) in testItem.stats" ng-show="val">
+		<td>{{key}}</td>
+		<td>{{val}}</td>
+	</tr>
+</table>
+
+<button ng-click="genLevels()">Level Exp</button>
+
+<div ng-repeat="num in nums">{{num}}</div>

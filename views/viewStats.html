@@ -1,0 +1,105 @@
+<div class="tables">
+	<div class="row">
+	<table class="col-xs-3 col-s-3 col-md-3 tbl">
+		<tr>
+			<td>Name</td>
+			<td>{{player.name}}</td>
+		</tr>
+		<tr>
+			<td>Lvl</td>
+			<td>{{player.level}}</td>
+		</tr>
+		<tr>
+			<td>Skill Points</td>
+			<td>{{player.skillPoint}}</td>
+		</tr>
+		<tr>
+			<td>Exp</td>
+			<td>{{player.exp}}</td>
+		</tr>
+		<tr>
+			<td>Next Lvl</td>
+			<td>{{player.nextLvl}}</td>
+		</tr>
+		<tr>
+			<td>Gold</td>
+			<td>{{player.gold}}</td>
+		</tr>
+	</table>
+	<table class="col-xs-4 col-s-4 col-md-4 tbl">
+		<tr>
+			<td>Health <i class="fa fa-heart"></i></td>
+			<td>{{mHealth}}</td>
+		</tr>
+		<tr>
+			<td>Mana <i class="fa fa-star"></i></td>
+			<td>{{mMana}}</td>
+		</tr>
+		<tr>
+			<td>Attack <i class="fa fa-gavel"></i></td>
+			<td>{{mAttack}}</td>
+		</tr>
+		<tr>
+			<td>Defense <i class="fa fa-shield"></i></td>
+			<td>{{mDefense}}</td>
+		</tr>
+		<tr>
+			<td>HPS <i class="fa fa-heart-o"></i></td>
+			<td>{{mHRegen}}</td>
+		</tr>
+		<tr>
+			<td>MPS <i class="fa fa-star-o"></i></td>
+			<td>{{mMRegen}}</td>
+		</tr>
+		<tr>
+			<td>ArmorPen <i class="fa fa-bullseye"></i></td>
+			<td>{{mArmPen}}</td>
+		</tr>		
+	</table>
+	<table class="col-xs-4 col-s-4 col-md-4 tbl">
+		<tr>
+			<td>Health <i class="fa fa-heart"></i></td>
+			<td>{{player.maxHealth}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('maxHealth',5)">+<i class="fa fa-heart"></i></button></td>
+		</tr>
+		<tr>
+			<td>Mana <i class="fa fa-star"></i></td>
+			<td>{{player.maxMana}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('maxMana',5)">+<i class="fa fa-star"></i></button></td>
+		</tr>
+		<tr>
+			<td>Attack <i class="fa fa-gavel"></i></td>
+			<td>{{player.attack}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('attack',.5)">+<i class="fa fa-gavel"></i></button></td>
+		</tr>
+		<tr>
+			<td>Defense <i class="fa fa-shield"></i></td>
+			<td>{{player.defense}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('defense',.5)">+<i class="fa fa-shield"></i></button></td>
+		</tr>
+		<tr>
+			<td>HPS <i class="fa fa-heart-o"></i></td>
+			<td>{{player.healthRegen}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('healthRegen',.25)">+<i class="fa fa-heart-o"></i></button></td>
+		</tr>
+		<tr>
+			<td>MPS <i class="fa fa-star-o"></i></td>
+			<td>{{player.manaRegen}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('manaRegen', .25)">+<i class="fa fa-star-o"></i></button></td>
+		</tr>
+		<tr>
+			<td>ArmorPen <i class="fa fa-bullseye"></i></td>
+			<td>{{player.armorPen}}</td>
+			<td><button class="btn btn-default" ng-click="skillUp('armorPen', 1)">+<i class="fa fa-bullseye"></i></button></td>
+		</tr>		
+	</table>
+	</div>
+</div>
+
+				
+				
+				
+				
+				
+				
+				

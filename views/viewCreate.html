@@ -1,0 +1,26 @@
+<div class='jumbotron' ng-show="name">
+	<h1>You are {{name}}, the {{holdClass.title}}!</h1>
+</div>
+<p>Name:<input type="text" ng-model="name" /></p>
+
+<div class="patchNotes" ng-init="toggled = false">
+	<div class="patchToggle">
+	<button ng-show="!toggled" ng-click="toggled = true">Toggle Patch Notes</button>
+	</div>
+	<div class="patchWrapper" ng-show="toggled" ng-click="toggled = false">
+		<div class="patchNotesEach" ng-repeat="patch in patches|limitTo:5">
+			<br>
+			<ul>Patch {{patch.patchNo}} | {{patch.date | date}}</ul>
+				<li ng-repeat="note in patch.notes">{{note}}</li>
+		</div>
+	</div>
+</div>
+<br>
+<div ng-repeat="class in classes">
+	<creation-field info="class"></creation-field>
+</div>
+
+
+<a href="#/game" class="startGame" ng-show="toggleStart && name" ng-click="loadClass()">START GAME</a>
+
+

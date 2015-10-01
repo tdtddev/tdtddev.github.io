@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+		
+			<div class="nav navbar-nav navbar-header">
+				<a class="navbar-brand" ng-click="goto('/'); bkgChng(''); getPath()" href="">DongerQuest</a>
+			</div>
+			
+			<ul class="nav navbar-nav">
+				<li ng-click="goto('/game'); getPath()" ng-show="player.created"><a>Wilderness</a></li>
+				<li ng-click="goto('/town'); getPath()" ng-show="player.created"><a>Town</a></li>
+			</ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown"  ng-click="getSaves()"><a class="dropdown-toggle" data-toggle="dropdown" id="save-button" type="button" href="">Save Game <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="save-button">
+							<li role="menuitem" ng-repeat="saves in gameSaves" ng-mouseenter="showDate = true" ng-mouseleave="showDate = false">
+								<a href="" ng-click="save(saves.save)" >
+									Slot {{saves.save}} : <span ng-show="saves['level']">{{saves['name']}} | Level {{saves['level']}}</span><span ng-show="!saves['level']">Empty Slot</span><span ng-show="showDate"> | {{saves['date'] | date}}</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				
+					<li class="dropdown" ng-click="getSaves()"><a class="dropdown-toggle" data-toggle="dropdown" id="save-button" type="button" href="">Load Game <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="save-button">
+						<li role="menuitem" ng-repeat="saves in gameSaves" ng-show="saves['level']" ng-mouseenter="showDate = true" ng-mouseleave="showDate = false">
+							<a href="" ng-click="goto('/game'); load(saves.save);" >
+								Slot {{saves.save}} : <span ng-show="saves['level']">{{saves['name']}} | Level {{saves['level']}}</span><span ng-show="!saves['level']">Empty Slot</span><span ng-show="showDate"> | {{saves['date'] | date}}</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			
+		</div>
+	</div>
+</nav>

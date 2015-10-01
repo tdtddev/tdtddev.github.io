@@ -1,0 +1,91 @@
+<div id='check'>
+	<input type="checkbox" ng-model="bgMode">
+</div>
+<div class='bgMode' ng-show="!bgMode">
+	<div class="col-xs-0 col-s-0 col-md-2">
+	</div>	
+	
+	<div class="col-xs-12 col-s-12 col-md-8">
+		<div class="container-fluid">
+			<div class="centered">
+			<div class="btn-group btn-group-lg" role="group">
+				<button class="btn btn-primary"  ng-click="handleFight(); $scope.stopRegen();" ng-disabled="button">Fight</button>
+				<button class="btn btn-primary"  ng-click="generatePeople(5,zone)">Generate Fights</button>
+				<button class="btn btn-primary"  ng-click="run()">Run</button>
+				<button class="btn btn-primary"  ng-click="magicToggle()">Toggle Magic</button>
+				<button class="btn btn-primary" ng-click="openInven()">Inventory</button>
+				<button class="btn btn-primary" ng-click="openStats()">Stats</button>
+			</div>
+				<alert ng-repeat="alert in alerts" type="{{alert.type}}" ng-click="closeAlert($index)">{{alert.msg}}</alert>
+		</div>
+			<div clas="row">
+			<div class="col-xs-12 col-md-12">
+						<!-- Zone Handler  -->
+					<div class ="zoneSelect">
+						<select ng-model="zone" ng-options="zone as zone.name disable when !zone.available for zone in zones" ng-change="bkgChng(zone.background); clear();" ng-init="bkgChng(zones[0].background); zone = zones[0]" ng-disabled='fightToggle'>
+						</select>
+					</div>
+					<div class="statWrap">
+						<progressbar class="progress-striped active" max="player.nextLvl" value="player.exp" type="warning"><i>{{player.exp}} / {{player.nextLvl}}</i></progressbar>
+						<span class="skp pull-left" ng-show="player.skillPoint"> Skill Points to Spend</span>
+						<span class="magic">{{toggleMagic | filtermag}}</span>
+						<span class="skp pull-right">
+							+{{mGoldPlus}} Gold
+							+{{mExpPlus}} Exp
+						</span>
+						<br>
+						<div class="col-xs-6 col-md-6">
+							<span class="player">{{player.name}}</span>
+							<br>
+							<span class="bars">
+							<progressbar max="mHealth" value="player.health" type="danger" class="pb"><span style="color:white; white-space:nowrap;">{{player.health | zeroOut}} / {{mHealth}}</span></progressbar>
+							<progressbar max="mMana" value="player.mana" type="info" class="pb"><span style="color:white; white-space:nowrap;">{{player.mana | zeroOut}} / {{mMana}}</span></progressbar>
+							</span>
+						</div >
+						<div class="col-xs-6 col-md-6">
+							<div class="enemy">{{playerTwo.name}}</div>
+							<span class="bars">
+							<progressbar  class="pb" max="playerTwo.maxHealth" value="playerTwo.health" type="danger" class="pb"><span style="color:white; white-space:nowrap;">{{playerTwo.health | zeroOut}} / {{playerTwo.maxHealth}}</span></progressbar>
+							</span>
+						</div>
+					</div>
+			</div>
+			</div>
+			<br>
+			<div clas="row">
+			<div class="col-xs-12 col-md-12" >
+				<div class="container-fluid">
+					<h1 id="enemyTitle">ENEMIES TO FIGHT</h1>	
+					<table id="fightTable">
+						<tr class='title'>
+							<td>Name</td>
+							<td>Title</td>
+							<td>Level</td>
+							<td>Health</td>
+							<td>Attack</td>
+							<td>Defense</td>
+						</tr>
+						<tr ng-repeat='enemy in enemyArray'>
+							<td>{{enemy.name}}</td>
+							<td>{{enemy.title}}</td>
+							<td>{{enemy.level}}</td>
+							<td>{{enemy.health}}</td>
+							<td>{{enemy.attack}}</td>
+							<td>{{enemy.defense}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	
+	<div class="col-xs-0 col-s-0 col-md-2">
+	</div>
+	
+	<div id="bossKill">
+		<div class="container">
+			<h1>Boss Kills: {{player.bossKills}} {{arm}}</h1>	
+		</div>
+	</div>
+</div>

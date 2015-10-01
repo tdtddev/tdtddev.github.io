@@ -1,0 +1,18 @@
+<div class="modal-body">
+	<div class="grave">
+		<img src="img/death/Blank_Gravestone.png"/>
+		<span>
+			<h1>R.I.P.</h1>
+			{{player.name}}
+			<br>
+			{{player.title}}
+			<br>
+			Level {{player.level}}
+			<br>
+			Total Exp: <br> {{player.totalExp | thousandSuffix}}
+			<br>
+			Total Gold: <br>{{player.totalGold | thousandSuffix}}
+		</span>
+	</div>
+</div>
+<!--<button class="btn btn-warning" ng-click="cancel()">Cancel</button>-->

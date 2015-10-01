@@ -1,0 +1,88 @@
+<div class="modal-body">
+	
+	<h3><small>Gold: {{player.gold}}</small></h3> <h3><small>Food: {{player.food}}</small></h3> <h3><small>Drinks: {{player.water}}</small></h3>
+	<h2>Gear</h2>
+<div class="invBlock">
+	<div ng-repeat="inv in inventory.items track by $index">
+		<table>
+			<tr ng-style="{'background-color': inv.color}">
+				<td>Name</td>
+				<td>{{inv.name}}</td>
+				<td><button class="btn btn-default" ng-click="remove($index)">Drop Item</button></td>
+			</tr>
+
+			<tr ng-style="{'background-color': inv.color}">
+				<td>Slot</td>
+				<td>{{inv.slot}}</td>
+			</tr>
+
+			<tr ng-style="{'background-color': inv.color}">
+				<td>Level</td>
+				<td>{{inv.level}}</td>
+			</tr>
+
+			<tr ng-style="{'background-color': inv.color}">
+				<td>Rarity</td>
+				<td>{{inv.rarity}}</td>
+			</tr>
+
+			<tr ng-style="{'background-color': inv.color}">
+				<td>Material</td>
+				<td>{{inv.material}}</td>
+			</tr>
+		</table>
+
+		<table>
+			<tr ng-repeat="(key, val) in inv.stats" ng-show="val">
+				<td>{{key}}</td>
+				<td>{{val}}</td>
+			</tr>
+		</table>
+		<br>
+	</div>
+</div>
+
+<hr>	
+	
+<div class="invBlock">
+	<h2>Flex Loot</h2>
+	<div ng-repeat="item in partInv track by $index">
+		<table>
+			<tr ng-style="{'background-color': item.color}">
+				<td>Name</td>
+				<td>{{item.name}}</td>
+				<td><button class="btn btn-default" ng-click="pushUp($index)">Equip</button></td>
+			</tr>
+
+			<tr ng-style="{'background-color': item.color}">
+				<td>Slot</td>
+				<td>{{item.slot}}</td>
+				<td><button class="btn btn-default" ng-click="removeTwo($index)">Drop Item</button></td>
+			</tr>
+
+			<tr ng-style="{'background-color': item.color}">
+				<td>Level</td>
+				<td>{{item.level}}</td>
+			</tr>
+
+			<tr ng-style="{'background-color': item.color}">
+				<td>Rarity</td>
+				<td>{{item.rarity}}</td>
+			</tr>
+
+			<tr ng-style="{'background-color': item.color}">
+				<td>Material</td>
+				<td>{{item.material}}</td>
+			</tr>
+		</table>
+
+		<table>
+			<tr ng-repeat="(key, val) in item.stats" ng-show="val">
+				<td>{{key}}</td>
+				<td>{{val}}</td>
+			</tr>
+		</table>
+		<br>
+	</div>
+</div>
+</div>

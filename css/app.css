@@ -1,0 +1,189 @@
+/*Fonts*/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Hanuman);
+
+/*CSS*/
+html{
+	font-family: 'Hanuman', serif;
+	background: url('') no-repeat center center fixed; 
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover  !important;
+  -o-background-size: cover  !important;
+  background-size: cover  !important;
+	height: 100%;
+}
+body { 
+	padding-top: 51px;
+}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.coverBg{
+	 position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+    display: none !important;
+}
+#check{
+    position:absolute;
+    bottom:2px;
+    right:2px;
+}
+#bossKill{
+	position:absolute;
+  bottom:0;
+	width: 100%;
+	text-align: center;
+	z-index: -1;
+}
+#bossKill h1{
+	color: aliceblue;
+}
+.centered{
+	text-align: center;
+}
+.skp {
+	color: aliceblue;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: -1.6em;
+}
+.magic {
+	color: aliceblue;
+	float: left;
+	text-align: center;
+	margin-top: -1.5em;
+	width: 100%;
+}
+.statWrap{
+    background-image: url("http://sparklehillphotography.com/wp-content/uploads/2014/08/Parchment-background-small.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	text-align: center;
+	width: 100%;
+	height: 10em;
+	text-shadow: 1px 1px 1px #000000;
+}
+.player {
+		font-size: 2em;
+		color: blue !important;
+}
+.bars {
+	float: left;
+	text-align: center;
+	width: 50%;
+	margin-left: 25%;
+}
+.pb{
+	margin-bottom: -.1%
+}
+.enemy {
+		font-size: 2em;
+		color: red !important;
+}
+#enemyTitle{
+	text-shadow: 1px 1px 1px #000000;
+	color: aliceblue !important;	
+	text-align: center;
+}
+#fightTable{
+	text-align: center;
+	width: 100%;
+}
+td {
+	border: black solid 1px;
+	text-align: center;
+	background: rgba(255,255,255,0.8)!important;
+}
+.forceSize td{
+	width: 100px;
+}
+.title {
+	border: black solid 1px;
+	margin-left:2px; 
+	margin-right:2px;
+	padding: 3px;
+	background: #f3f3f3;
+}
+.selectionTable{
+	display: inline-block;
+	float: left;
+}
+.startGame{
+	top: 20px !important;
+	padding: 20px;
+	text-align: center;
+	background-color: forestgreen;
+	color: aliceblue;
+	border: black solid 1px;
+	position: relative;
+}
+.startGame:hover{
+	text-decoration: none;
+	color: aliceblue;
+}
+.patchNotes{
+	float: right;
+}
+.patchNotes ul{
+	border: black solid 1px;
+	top: 1px !important;
+	text-align: center;
+}
+.patchNotes li:nth-child(even){
+	background-color: #f1f1f1;
+}
+.patchToggle{
+	margin-left:auto; 
+	margin-right:auto;
+}
+/* Town */
+.inventoryTown {
+	text-align: center;
+}
+.whBg{
+	background-color: rgba(200,225,255,.9);
+}
+/* Inventory */
+.invBlock {
+	column-count: 2;	
+}
+/* Death */
+.grave{
+	position: relative; 
+  width: 100%;
+}
+.grave span{
+	position: absolute; 
+	top: 10px; 
+	left: -4%; 
+	width: 100%;
+	text-align: center;
+	font-size: 1.5em;
+	color: #b1b1b1;
+	text-shadow: 0px 1px 1px #fff;
+}
+/* Stat Modal */
+.tables{
+	display:inline-table;
+	margin-top: 3%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	width: 90%;
+}
+.tbl{
+	margin-left: 1%;
+	margin-right: 1.5%;
+}
+.tables td{
+	height: 35px;
+}
+td button{
+	width: 100%;
+}
