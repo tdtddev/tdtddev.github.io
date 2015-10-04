@@ -2,6 +2,7 @@
 	<input type="checkbox" ng-model="bgMode">
 </div>
 <div class='bgMode' ng-show="!bgMode">
+
 	<div class="col-xs-0 col-s-0 col-md-2">
 	</div>	
 	
@@ -9,12 +10,12 @@
 		<div class="container-fluid">
 			<div class="centered">
 			<div class="btn-group btn-group-lg" role="group">
-				<button class="btn btn-primary"  ng-click="handleFight(); $scope.stopRegen();" ng-disabled="button">Fight</button>
-				<button class="btn btn-primary"  ng-click="generatePeople(5,zone)">Generate Fights</button>
+				<button class="btn btn-primary"  id="gameCtrl" ng-click="startFight(); $scope.stopRegen();" ng-disabled="button">Fight</button>
+				<button class="btn btn-primary"  ng-click="generatePeople(5,zone);">Generate Fights</button>
 				<button class="btn btn-primary"  ng-click="run()">Run</button>
 				<button class="btn btn-primary"  ng-click="magicToggle()">Toggle Magic</button>
-				<button class="btn btn-primary" ng-click="openInven()">Inventory</button>
-				<button class="btn btn-primary" ng-click="openStats()">Stats</button>
+				<button class="btn btn-primary"	 ng-click="openInven()">Inventory</button>
+				<button class="btn btn-primary"	 ng-click="openStats()">Stats</button>
 			</div>
 				<alert ng-repeat="alert in alerts" type="{{alert.type}}" ng-click="closeAlert($index)">{{alert.msg}}</alert>
 		</div>
@@ -53,30 +54,33 @@
 			</div>
 			<br>
 			<div clas="row">
-			<div class="col-xs-12 col-md-12" >
-				<div class="container-fluid">
-					<h1 id="enemyTitle">ENEMIES TO FIGHT</h1>	
-					<table id="fightTable">
-						<tr class='title'>
-							<td>Name</td>
-							<td>Title</td>
-							<td>Level</td>
-							<td>Health</td>
-							<td>Attack</td>
-							<td>Defense</td>
-						</tr>
-						<tr ng-repeat='enemy in enemyArray'>
-							<td>{{enemy.name}}</td>
-							<td>{{enemy.title}}</td>
-							<td>{{enemy.level}}</td>
-							<td>{{enemy.health}}</td>
-							<td>{{enemy.attack}}</td>
-							<td>{{enemy.defense}}</td>
-						</tr>
-					</table>
+				<div class="col-xs-12 col-md-12 col-lg-8">
+					<canvas width="800" height="600" id="game-canvas"></canvas>
+				</div>
+				<div class="col-xs-12 col-md-12 col-lg-4" >
+					<div class="container-fluid">
+						<h1 id="enemyTitle">ENEMIES TO FIGHT</h1>	
+						<table id="fightTable">
+							<tr class='title'>
+								<td>Name</td>
+								<td>Title</td>
+								<td>Level</td>
+								<td>Health</td>
+								<td>Attack</td>
+								<td>Defense</td>
+							</tr>
+							<tr ng-repeat='enemy in enemyArray'>
+								<td>{{enemy.name}}</td>
+								<td>{{enemy.title}}</td>
+								<td>{{enemy.level}}</td>
+								<td>{{enemy.health}}</td>
+								<td>{{enemy.attack}}</td>
+								<td>{{enemy.defense}}</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 	</div>
 	

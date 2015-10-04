@@ -187,3 +187,11 @@ td {
 td button{
 	width: 100%;
 }
+
+
+/*  CANVAS  */
+#game-canvas{
+	position: relative;
+	float: left;
+	display: inline;
+}

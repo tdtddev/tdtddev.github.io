@@ -15,6 +15,8 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
 	var invSize = 3;
 	var invTwoSize = 2;
 	
+	
+
 	var updateStats = function(){
 		armor = playerService.playerEquip;
 		$scope.mGoldPlus = armor[0];
@@ -192,7 +194,12 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
 		}
 	};	
 //---------------------Fighting  
+	$scope.startFight = function(){
+		createPlayer();
+	};
+	
 	$scope.handleFight = function() {
+		console.log('handling');
 		fighting = true;
 		regenHealth();
 		regenMana();
@@ -230,8 +237,11 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
 			
 			if ($scope.player.health > 0){
 				$scope.playerWin();
+				$scope.playerTwo = $scope.enemyArray[0];
+				nextFight();
 			} else {
 				$scope.playerLoss();
+				fightContainer.removeChild(player);
 			};
 		}
 		fighting = false;
@@ -323,7 +333,6 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
 				break;
 		};
 		
-			$scope.handleFight();
 	};
 	//------------------Loss
 	$scope.playerLoss = function(){	
@@ -364,6 +373,7 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
 			}
 		}
 		$scope.fightCheck();
+		battle($scope.enemyArray);
 	};
 	
 //--------------------Background Changes
@@ -410,9 +420,9 @@ app.controller('GameCtrl', ['$scope', '$location', '$interval', '$modal', 'playe
     });
   };
 	
-	
-	
+	loadGame();
 	regenHealth();
 	regenMana();
 	$scope.openInven();
 }]);
+

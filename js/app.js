@@ -266,6 +266,10 @@ var filt = function(x){
 		return 0;	
 	}
 };
+
+//PIXI
+
+
 //Make cookies if cookie doesn't exist
 var makeCookies = function(){
 	for (i = 1; i <= 5; i++){
